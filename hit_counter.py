@@ -46,14 +46,14 @@ while True:
     if start_counter > CHUNK:
         start = True
 
-    for num in data_int:
-        if num > 500:
-            start_counter = 0
-            if start:
+    for num in data_int: # look through ever value
+        if num > 500: # if its greater than 500, it could be a hit
+            start_counter = 0 # reset start_counter cause its not calm anymore
+            if start: #if there hasn't been a hit since its calmed down, its a hit
                 start = False
                 hit_counter += 1
                 print('HIT: ' + str(hit_counter))
-        elif -20 < num < 20:
+        elif -20 < num < 20: # if its calm, it gets closer to starting
             start_counter += 1
 
     # changes graph  MAKE SURE TO UNCOMMENT SHOW()
